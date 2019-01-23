@@ -3,7 +3,7 @@ body{
     background-color:#3f3f41;
     color:white;
     padding-top: 1em;
-    font-family: "DejaVu Sans";
+    font-family: sans-serif;
 }
 input[type=text] {
     color: white;
@@ -40,7 +40,7 @@ input[type=submit]{
 .output{
     padding-left: 2.5em;
     display: inline-block;
-    background: url('assets/output.png') no-repeat 0.5em 0px;
+    background: url('assets/output.png') no-repeat 0.5em 0;
 }
 table, td, th {
     border: 1px solid #ddd;
@@ -71,18 +71,21 @@ th, td {
     top: 33%;
     left: -18%;
 }
-.down{
-
+.down::before{
+    content: "┃";
+    top: 85%;
+    left : 40%;
 }
 .right::before{
 
     content: "━━";
     top: 33%;
     left: 86%;
-
 }
-.up{
-
+.up::before{
+    content: "┃";
+    top: -18%;
+    left : 40%;
 }
 
 

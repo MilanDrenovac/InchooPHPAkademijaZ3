@@ -12,9 +12,9 @@
 <div class="input">
 <form action="index.php" method="post">
     <span>Rows:</span>
-    <input type="text" name="x" >
+    <input type="text" name="x" value="<?php echo $_POST['x'];?>">
     <span>Columns:</span>
-    <input type="text" name="y" ><br>
+    <input type="text" name="y" value="<?php echo $_POST['y'];?>"><br>
     <input type="submit" value="Create Table">
 </form>
 </div>
@@ -63,7 +63,7 @@ function tableBuilder($x, $y, &$a, &$class)
         {
             for ($i = $x - 1; $i >= $countX; --$i) {
                 $a[$i][$countY] = $numb++;
-                $class[$i][$countY] = $i == $countX ? 'right ': 'down';
+                $class[$i][$countY] = $i == $countX ? 'right ': 'up';
             }
             $countY++;
         }
@@ -76,12 +76,14 @@ tableBuilder($x, $y, $a, $class);
 
 // Writing the table in HTML
 
+$tableLast = $x*$y;
 echo "<table>";
 for($i=0;$i<$x;$i++){
     echo "<tr>";
     for($j=0;$j<$y;$j++){
-        echo '<td class=',$class[$i][$j],'>';
-        echo ($a[$i][$j]);
+        $n = $a[$i][$j];
+        echo '<td class=',($n == $tableLast ? '' : $class[$i][$j] ),'>';
+        echo $n;
         echo "</td>";
     }
     echo "</tr>";
