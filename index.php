@@ -22,6 +22,7 @@
 <?php
 // Function to build the clockwise table that takes values X and Y for the table
 // &$a is a global array to store the numbers
+// Also assigns a direction for the css code on the table
 function tableBuilder($x, $y, &$a, &$class)
 {
     $numb = 1;
@@ -51,7 +52,7 @@ function tableBuilder($x, $y, &$a, &$class)
         {
             for ($i = $y - 1; $i >= $countY; --$i) {
                 $a[$x - 1][$i] = $numb++;
-                $class[$x - 1][$i] = $i == $countY-1 ? 'up' : 'left';
+                $class[$x - 1][$i] = $i == $countY ? 'up' : 'left';
             }
             $x--;
         }
@@ -62,7 +63,7 @@ function tableBuilder($x, $y, &$a, &$class)
         {
             for ($i = $x - 1; $i >= $countX; --$i) {
                 $a[$i][$countY] = $numb++;
-                $class[$i][$countY] = $i == $countX-1 ? 'down ': 'right';
+                $class[$i][$countY] = $i == $countX ? 'right ': 'down';
             }
             $countY++;
         }

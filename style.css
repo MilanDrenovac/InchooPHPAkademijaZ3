@@ -1,7 +1,9 @@
+@charset "utf-8";
 body{
     background-color:#3f3f41;
     color:white;
     padding-top: 1em;
+    font-family: "DejaVu Sans";
 }
 input[type=text] {
     color: white;
@@ -51,24 +53,37 @@ table {
 }
 
 th, td {
+    font-size: 1.5em;
     position: relative;
     margin: 0;
     border-radius: 4px;
     width: 2.5em;
     height: 2.5em;
 }
-.left{
-
+.left::before, .down::before, .right::before, .up::before {
+    font-size: 0.7em;
+    color: #849769 ;
+    text-shadow: 0 0 4px #072605;
+    position: absolute;
+}
+.left::before{
+    content: "━━";
+    top: 33%;
+    left: -18%;
 }
 .down{
 
 }
 .right::before{
-    color: white ;
-content: "→";
-    left: 70%;
-    position: absolute;
+
+    content: "━━";
+    top: 33%;
+    left: 86%;
+
 }
 .up{
 
 }
+
+
+/*┃
