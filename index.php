@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework 3</title>
+
 </head>
 <body>
+<div class="input">
+<form action="index.php" method="post">
+    Input Your Numbers:<br>
+    <input type="text" name="x" ><br>
+    <input type="text" name="y" ><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+<div class="output">
 <?php
 // Function to build the clockwise table that takes values X and Y for the table
 // &$a is a global array to store the numbers
@@ -76,5 +86,6 @@ echo "</table>";
 
 
 ?>
+</div>
 </body>
 </html>
