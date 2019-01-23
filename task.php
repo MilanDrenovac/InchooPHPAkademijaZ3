@@ -55,6 +55,25 @@ function tableBuilder($x, $y, &$a)
         }
     }
 }
+$x = $_POST['x'];
+$y = $_POST['y'];
+
+tableBuilder($x, $y, $a);
+
+// Writing the table in HTML
+
+echo "<table>";
+for($i=0;$i<$x;$i++){
+    echo "<tr>";
+    for($j=0;$j<$y;$j++){
+        echo "<td>";
+        echo ($a[$i][$j]);
+        echo "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
 
 ?>
 </body>
