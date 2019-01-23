@@ -12,17 +12,17 @@
 <div class="input">
 <form action="index.php" method="post">
     <span>Rows:</span>
-    <input type="text" name="x" ><br>
+    <input type="text" name="x" >
     <span>Columns:</span>
     <input type="text" name="y" ><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Create Table">
 </form>
 </div>
 <div class="output">
 <?php
 // Function to build the clockwise table that takes values X and Y for the table
 // &$a is a global array to store the numbers
-function tableBuilder($x, $y, &$a)
+function tableBuilder($x, $y, &$a, &$class)
 {
     $numb = 1;
     $countX = 0;
@@ -32,9 +32,8 @@ function tableBuilder($x, $y, &$a)
         // Print the first x from the remaining x
 
         for ($i = $countY; $i < $y; ++$i) {
-
-
             $a[$countX][$i] = $numb++;
+            $class[$countX][$i] = 'right';
         }
         $countX++;
 
@@ -42,6 +41,7 @@ function tableBuilder($x, $y, &$a)
 
         for ($i = $countX; $i < $x; ++$i) {
             $a[$i][$y - 1] = $numb++;
+            $class[$i][$y - 1] = 'down';
         }
         $y--;
 
@@ -51,6 +51,7 @@ function tableBuilder($x, $y, &$a)
         {
             for ($i = $y - 1; $i >= $countY; --$i) {
                 $a[$x - 1][$i] = $numb++;
+                $class[$x - 1][$i] = 'left';
             }
             $x--;
         }
@@ -61,6 +62,7 @@ function tableBuilder($x, $y, &$a)
         {
             for ($i = $x - 1; $i >= $countX; --$i) {
                 $a[$i][$countY] = $numb++;
+                $class[$i][$countY] = 'up';
             }
             $countY++;
         }
@@ -69,7 +71,7 @@ function tableBuilder($x, $y, &$a)
 $x = $_POST['x'];
 $y = $_POST['y'];
 
-tableBuilder($x, $y, $a);
+tableBuilder($x, $y, $a, $class);
 
 // Writing the table in HTML
 
@@ -77,7 +79,7 @@ echo "<table>";
 for($i=0;$i<$x;$i++){
     echo "<tr>";
     for($j=0;$j<$y;$j++){
-        echo "<td>";
+        echo '<td class=',$class[$i][$j],'>';
         echo ($a[$i][$j]);
         echo "</td>";
     }
