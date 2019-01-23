@@ -33,7 +33,7 @@ function tableBuilder($x, $y, &$a, &$class)
 
         for ($i = $countY; $i < $y; ++$i) {
             $a[$countX][$i] = $numb++;
-            $class[$countX][$i] = 'right';
+            $class[$countX][$i] = $i == $y-1 ? 'down' : 'right';
         }
         $countX++;
 
@@ -41,7 +41,7 @@ function tableBuilder($x, $y, &$a, &$class)
 
         for ($i = $countX; $i < $x; ++$i) {
             $a[$i][$y - 1] = $numb++;
-            $class[$i][$y - 1] = 'down';
+            $class[$i][$y - 1] = $i == $x-1 ? 'left' : 'down';
         }
         $y--;
 
@@ -51,7 +51,7 @@ function tableBuilder($x, $y, &$a, &$class)
         {
             for ($i = $y - 1; $i >= $countY; --$i) {
                 $a[$x - 1][$i] = $numb++;
-                $class[$x - 1][$i] = 'left';
+                $class[$x - 1][$i] = $i == $countY-1 ? 'up' : 'left';
             }
             $x--;
         }
@@ -62,7 +62,7 @@ function tableBuilder($x, $y, &$a, &$class)
         {
             for ($i = $x - 1; $i >= $countX; --$i) {
                 $a[$i][$countY] = $numb++;
-                $class[$i][$countY] = 'up';
+                $class[$i][$countY] = $i == $countX-1 ? 'down ': 'right';
             }
             $countY++;
         }
