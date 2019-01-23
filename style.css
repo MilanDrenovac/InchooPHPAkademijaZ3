@@ -60,11 +60,16 @@ th, td {
     width: 2.5em;
     height: 2.5em;
 }
+td:hover {
+    background-color: #575757;
+    color: #979797;
+}
 .left::before, .down::before, .right::before, .up::before {
     font-size: 0.7em;
     color: #849769 ;
     text-shadow: 0 0 4px #072605;
     position: absolute;
+    z-index: 1;
 }
 .left::before{
     content: "━━";
