@@ -11,8 +11,9 @@
 <body>
 <div class="input">
 <form action="index.php" method="post">
-    Input Your Numbers:<br>
+    <span>Rows:</span>
     <input type="text" name="x" ><br>
+    <span>Columns:</span>
     <input type="text" name="y" ><br>
     <input type="submit" value="Submit">
 </form>

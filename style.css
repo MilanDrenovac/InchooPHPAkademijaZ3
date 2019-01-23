@@ -3,11 +3,20 @@ body{
     color:white;
 }
 .input{
+    padding-left: 2.5em;
     display: inline-block;
     vertical-align: top;
+    background: url('assets/input.png') no-repeat 0.5em 0px;
+}
+.input span{
+    font-size: 0.9em;
+    padding: 0.3em 0 0.3em ;
+    display:block;
 }
 .output{
+    padding-left: 2.5em;
     display: inline-block;
+    background: url('assets/output.png') no-repeat 0.5em 0px;
 }
 table, td, th {
     border: 1px solid #ddd;
