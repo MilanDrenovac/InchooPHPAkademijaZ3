@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='style.css'>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Homework 3</title>
 
 </head>
 <body>
-<div class="input">
-<form action="index.php" method="post">
+<div class='input'>
+<form action='index.php' method='post'>
     <span>Rows:</span>
-    <input type="text" name="x" value="<?php echo $_POST['x'];?>">
+    <input type='text' name='x' value='<?php echo $_POST['x'];?>'>
     <span>Columns:</span>
-    <input type="text" name="y" value="<?php echo $_POST['y'];?>"><br>
-    <input type="submit" value="Create Table">
+    <input type='text' name='y' value='<?php echo $_POST['y'];?>'><br>
+    <input type='submit' value='Create Table'>
 </form>
 </div>
-<div class="output">
+<div class='output'>
 <?php
 // Function to build the clockwise table that takes values X and Y for the table
 // &$a is a global array to store the numbers
@@ -77,18 +77,18 @@ tableBuilder($x, $y, $a, $class);
 // Writing the table in HTML
 
 $tableLast = $x*$y;
-echo "<table>";
+echo '<table>';
 for($i=0;$i<$x;$i++){
-    echo "<tr>";
+    echo '<tr>';
     for($j=0;$j<$y;$j++){
         $n = $a[$i][$j];
         echo '<td class=',($n == $tableLast ? '' : $class[$i][$j] ),'>';
         echo $n;
-        echo "</td>";
+        echo '</td>';
     }
-    echo "</tr>";
+    echo '</tr>';
 }
-echo "</table>";
+echo '</table>';
 
 
 ?>
