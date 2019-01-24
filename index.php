@@ -69,15 +69,17 @@ function tableBuilder($x, $y, &$a, &$class)
         }
     }
 }
-$x = $_POST['x'];
-$y = $_POST['y'];
-// Sanitation Checks
-if (!is_numeric($x) || $x <=0 ||!is_numeric($y) || $y <=0 ) {
-    echo "<p>This is not a valid number, please input valid numbers<p>";
-    exit();
+// Function that checks the validity of numbers
+function validInput($a){
+    if(! is_numeric($a) || $a<0){
+        echo "not a valid input: $a";
+        exit(0);
+    }
+    return (int) $a;
 }
-$x = round($x ,0);
-$y = round($y ,0);
+$x = validInput($_POST['x']);
+$y = validInput($_POST['y']);
+echo $x,$y;
 
 tableBuilder($x, $y, $a, $class);
 
