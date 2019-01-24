@@ -60,9 +60,19 @@ th, td {
     width: 2.5em;
     height: 2.5em;
 }
-td:hover {
+.start {
     background-color: #575757;
     color: #979797;
+}
+.start::before{
+    content: "━";
+    top: 33%;
+    left: 103%;
+    font-size: 0.7em;
+    color: #849769 ;
+    text-shadow: 0 0 4px #072605;
+    position: absolute;
+    z-index: 2;
 }
 .left::before, .down::before, .right::before, .up::before {
     font-size: 0.7em;

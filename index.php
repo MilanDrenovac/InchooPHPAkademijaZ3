@@ -79,7 +79,7 @@ function validInput($a){
 }
 $x = validInput($_POST['x']);
 $y = validInput($_POST['y']);
-echo $x,$y;
+//echo $x,$y;
 
 tableBuilder($x, $y, $a, $class);
 
@@ -87,6 +87,7 @@ tableBuilder($x, $y, $a, $class);
 
 $tableLast = $x*$y;
 echo '<table>';
+$class[0][0] = 'start';
 for($i=0;$i<$x;$i++){
     echo '<tr>';
     for($j=0;$j<$y;$j++){
@@ -98,7 +99,7 @@ for($i=0;$i<$x;$i++){
     echo '</tr>';
 }
 echo '</table>';
-
+preg_replace('<td class ="right">1<\/td>', '<td class = "start">1<\/td>', 'index.php')
 
 ?>
 </div>
