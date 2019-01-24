@@ -99,7 +99,6 @@ for($i=0;$i<$x;$i++){
     echo '</tr>';
 }
 echo '</table>';
-preg_replace('<td class ="right">1<\/td>', '<td class = "start">1<\/td>', 'index.php')
 
 ?>
 </div>
